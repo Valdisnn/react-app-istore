@@ -1,43 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <meta name="description" content="Web site created using create-react-app"/>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+    <title>iStore</title>
+    <style>
+        #hellopreloader>p{display:none}#hellopreloader_preload{display:block;position:fixed;z-index:99999;top:0;left:0;width:100%;height:100%;min-width:1px;background:#f50057 url(apple.png) center center no-repeat;background-size:41px}
+    </style>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<div id="hellopreloader">
+    <div id="hellopreloader_preload"></div>
+</div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<div id="root"></div>
+<script>
+    let hellopreloader=document.getElementById("hellopreloader_preload");const fadeOutnojquery=e=>{e.style.opacity=1;let l=setInterval(()=>{e.style.opacity=e.style.opacity-.05,e.style.opacity<=.05&&(clearInterval(l),hellopreloader.style.display="none")},16)};window.onload=function(){setTimeout(function(){fadeOutnojquery(hellopreloader)},2e3)};
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyC4poRTJ2p_FbAgVldVl_7Mtq952X0-pzs",
+        authDomain: "istore-d8012.firebaseapp.com",
+        projectId: "istore-d8012",
+        storageBucket: "istore-d8012.appspot.com",
+        messagingSenderId: "69155156387",
+        appId: "1:69155156387:web:eaa594b1930fdbd87f2a16"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+</body>
 </html>
