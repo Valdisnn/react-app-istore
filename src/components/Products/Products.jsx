@@ -12,6 +12,7 @@ import {
     DialogContentText,
     DialogTitle,
     IconButton,
+    TextField
 } from '@material-ui/core';
 
 import Product from "./Product/Product";
@@ -19,7 +20,7 @@ import useStyles from './styles';
 import logo from "../../assets/apple-footer.png";
 import CloseIcon from "@material-ui/icons/Close";
 import TextMobileStepper from "./Slider";
-import mapImg from '../../assets/map.webp';
+//import mapImg from '../../assets/map.webp';
 
 const Products = ({products, onAddToCart}) => {
     const classes = useStyles();
@@ -53,6 +54,10 @@ const Products = ({products, onAddToCart}) => {
                 <TextMobileStepper/>
             </div>
             <Container>
+                <form className={classes.root} noValidate autoComplete="off">
+                    <TextField id="standard-basic" label="Поиск товаров" style={{width: "100%"}}/>
+                </form>
+                <br/>
                 <Grid container justify="flex-start" spacing={3}>
                     {products.map((product) => (
                         <Grid item key={product.id} xs={12} sm={4}>
@@ -61,13 +66,11 @@ const Products = ({products, onAddToCart}) => {
                     ))}
                 </Grid>
             </Container>
-            <div style={{marginTop: '50px'}}>
-                <a style={{textDecoration: 'none', outline: 'none'}}
-                   href="https://yandex.ru/maps/?um=constructor%3A3f533203cc2a5d01bf04339194f1fb9c1c3806704c15fde6d8b7614d8ca9ad83&source=constructorLink"
-                   target='_blank' rel="noreferrer">
-                    <img className={classes.map} src={mapImg} alt=""/>
-                </a>
-            </div>
+            <a href="https://yandex.ru/map-widget/v1/?um=constructor%3A3f533203cc2a5d01bf04339194f1fb9c1c3806704c15fde6d8b7614d8ca9ad83&amp;source=constructor" target="_blank" rel="noreferrer">
+                <div style={{marginTop: '50px', pointerEvents: 'none'}}>
+                    <iframe title="YaMAp" src="https://yandex.ru/map-widget/v1/?um=constructor%3A3f533203cc2a5d01bf04339194f1fb9c1c3806704c15fde6d8b7614d8ca9ad83&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+                </div>
+            </a>
             <footer>
                 <Toolbar className={classes.footer}>
                     <CssBaseline/>

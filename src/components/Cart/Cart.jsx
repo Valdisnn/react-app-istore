@@ -27,7 +27,7 @@ const Cart = ({cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart}
                 ))}
             </Grid>
             <div className={classes.cardDetails}>
-                <Typography variant="h5">Итог: {cart.subtotal.formatted_with_symbol}</Typography>
+                <Typography variant="h6" style={{fontWeight: 'bold'}}>Итог: {cart.subtotal.formatted_with_symbol}</Typography>
                 <div className={classes.buttonBlock}>
                     <Button className={classes.emptyButton} size="medium" type="button" variant="contained"
                             color="secondary" onClick={handleEmptyCart}>Очистить</Button>
